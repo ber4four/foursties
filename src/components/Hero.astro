@@ -1,0 +1,146 @@
+---
+// Hero.astro - Kremes_Pedia
+---
+
+<section class="relative overflow-hidden pt-8 pb-16 md:pt-16 md:pb-24 bg-gradient-to-b from-brand-cream-light/60 via-surface-light to-surface-light dark:from-surface-dark dark:via-surface-dark dark:to-surface-dark">
+  
+  <!-- Subtle organic background blur shapes -->
+  <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-brand-peach/20 to-brand-cream/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="absolute -top-20 -right-20 w-80 h-80 bg-brand-green/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Text & Value Proposition (7 cols) -->
+      <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        
+        <!-- Target Audience & Category Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cream/60 dark:bg-surface-dark-card border border-brand-cream dark:border-brand-green/30 text-xs sm:text-sm font-bold text-brand-green dark:text-brand-cream shadow-sm">
+          <span class="flex h-2 w-2 rounded-full bg-brand-peach animate-pulse"></span>
+          <span>Sahabat Ibu Bekerja & Balita 8–24 Bulan Bebas GTM</span>
+        </div>
+
+        <!-- Single Unique H1 for Homepage SEO -->
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] text-[#1C3A18] dark:text-[#FFF9F0] leading-[1.18] tracking-tight">
+          Kremes_Pedia: Rahasia Anak Lahap Makan dengan Inovasi <span class="relative inline-block text-brand-green dark:text-brand-cream underline decoration-brand-peach decoration-wavy decoration-2">Kremesan & Abon</span> Bernutrisi
+        </h1>
+
+        <!-- Subtitle targeted for working moms -->
+        <p class="text-base sm:text-lg text-[#4A5D4B] dark:text-[#A8BBAA] leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          Ucapkan selamat tinggal pada drama tutup mulut si kecil! Diformulasikan khusus dengan <strong>100% kaldu ayam kampung & daging sapi asli murni</strong>, rendah garam, tanpa MSG, serta tekstur lumer di mulut yang melatih sensori makan balita.
+        </p>
+
+        <!-- 3 Key Value Props / Quick Bullets -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-left">
+          <div class="flex items-center gap-2.5 p-3 rounded-2xl bg-white/80 dark:bg-surface-dark-card border border-brand-cream/60 dark:border-surface-dark-border shadow-soft">
+            <span class="text-xl">🥣</span>
+            <div>
+              <div class="text-xs font-bold text-[#1C3A18] dark:text-[#E2EBE2]">Non-MSG & Rendah Garam</div>
+              <div class="text-[11px] text-[#5F6D61] dark:text-[#9EAEA0]">Aman untuk ginjal bayi</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2.5 p-3 rounded-2xl bg-white/80 dark:bg-surface-dark-card border border-brand-cream/60 dark:border-surface-dark-border shadow-soft">
+            <span class="text-xl">🥩</span>
+            <div>
+              <div class="text-xs font-bold text-[#1C3A18] dark:text-[#E2EBE2]">Dobel Protein & Zat Besi</div>
+              <div class="text-[11px] text-[#5F6D61] dark:text-[#9EAEA0]">Booster BB balita</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2.5 p-3 rounded-2xl bg-white/80 dark:bg-surface-dark-card border border-brand-cream/60 dark:border-surface-dark-border shadow-soft">
+            <span class="text-xl">⚡</span>
+            <div>
+              <div class="text-xs font-bold text-[#1C3A18] dark:text-[#E2EBE2]">Praktis Tabur 5 Detik</div>
+              <div class="text-[11px] text-[#5F6D61] dark:text-[#9EAEA0]">Solusi cepat ibu bekerja</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <a
+            href="/produk"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-brand-green hover:bg-brand-green-light text-[#FFF9F0] text-base font-bold shadow-green-glow hover:shadow-soft-lg transform hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <span>Tabur Krenyesnya, Habiskan Nasinya! Coba Resep & Dapatkan Promo Spesial Sekarang</span>
+            <svg class="w-5 h-5 text-brand-cream flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+
+          <a
+            href="/blog/solusi-anak-lahap-makan-anti-gtm"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-brand-cream/40 dark:bg-surface-dark-card hover:bg-brand-cream/70 dark:hover:bg-brand-green/20 text-[#1C3A18] dark:text-brand-cream text-base font-bold border border-brand-cream dark:border-surface-dark-border transition-colors duration-200"
+          >
+            <span>Pelajari Trik Anti-GTM</span>
+          </a>
+        </div>
+
+        <!-- Trust Proof Micro Banner -->
+        <div class="pt-4 flex items-center justify-center lg:justify-start gap-4 text-xs text-[#5F6D61] dark:text-[#8FA091]">
+          <div class="flex -space-x-2">
+            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="Ibu Reviewer" />
+            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Ibu Reviewer" />
+            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80" alt="Ibu Reviewer" />
+          </div>
+          <div>
+            <span class="font-bold text-[#1C3A18] dark:text-[#E2EBE2]">12.500+ Ibu Indonesia</span> membuktikan piring makan anak tandas tanpa drama.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Visual Showcase (5 cols) -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          
+          <!-- Main Product & Meal Image Container -->
+          <div class="relative rounded-3xl overflow-hidden shadow-soft-lg border-4 border-white dark:border-surface-dark-border bg-gradient-to-br from-brand-cream/20 to-brand-peach/20">
+            <img
+              src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=800&q=80"
+              alt="Bayi Balita Menikmati MPASI dengan Kremesan dan Abon Kremes_Pedia"
+              loading="eager"
+              class="w-full h-[420px] object-cover"
+            />
+            
+            <!-- Floating Badge: Nutrisi Alami -->
+            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/95 dark:bg-surface-dark-card/95 backdrop-blur-md border border-brand-cream/80 dark:border-surface-dark-border shadow-soft flex items-center justify-between">
+              <div>
+                <div class="text-xs font-bold text-brand-green dark:text-brand-cream flex items-center gap-1.5">
+                  <span class="text-base">✨</span> Formula Khusus MPASI
+                </div>
+                <div class="text-xs text-[#5F6D61] dark:text-[#A8BBAA] mt-0.5">
+                  Tekstur lumer di lidah, tidak serik di tenggorokan
+                </div>
+              </div>
+              <span class="text-xs font-extrabold px-3 py-1 rounded-xl bg-brand-peach text-[#1C3A18]">
+                100% Halal
+              </span>
+            </div>
+          </div>
+
+          <!-- Decorative Floating Card 1: Booster Protein -->
+          <div class="absolute -top-5 -left-5 bg-white dark:bg-surface-dark-card p-3 rounded-2xl shadow-pastel border border-brand-cream hidden sm:flex items-center gap-3 animate-bounce" style="animation-duration: 4s;">
+            <span class="text-2xl">🍗</span>
+            <div>
+              <div class="text-xs font-extrabold text-[#1C3A18] dark:text-[#E2EBE2]">Ayam Kampung Asli</div>
+              <div class="text-[10px] text-[#7A8A7C]">Kaldu pekat kaya kolagen</div>
+            </div>
+          </div>
+
+          <!-- Decorative Floating Card 2: Anti-GTM -->
+          <div class="absolute -bottom-4 -right-4 bg-brand-green text-brand-cream p-3 rounded-2xl shadow-green-glow border border-brand-green-light flex items-center gap-2.5">
+            <span class="text-xl">🏆</span>
+            <div>
+              <div class="text-xs font-extrabold">Solusi #1 Anti-GTM</div>
+              <div class="text-[10px] text-brand-cream/80">Rekomendasi Ibu Pintar</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

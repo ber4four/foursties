@@ -1,0 +1,139 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  type?: 'website' | 'article';
+  author?: string;
+  publishedDate?: string;
+  modifiedDate?: string;
+  tags?: string[];
+  breadcrumbs?: Array<{ name: string; url: string }>;
+}
+
+const {
+  title = 'Kremes_Pedia | Solusi Anak Lahap Makan (Anti-GTM) & Inovasi MPASI Balita',
+  description = 'Solusi Anak Lalap Makan (Anti-GTM), Inovasi Tekstur & Sensori MPASI, serta Trik Menambah Kalori & Protein Harian Tanpa Ribet untuk Ibu Bekerja & Ibu Modern Usia 24–34 Tahun dengan balita 8–24 bulan.',
+  image = 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80',
+  canonical = Astro.url.href,
+  type = 'website',
+  author = 'Tim Nutrisi Kremes_Pedia',
+  publishedDate,
+  modifiedDate,
+  tags = [],
+  breadcrumbs = [],
+} = Astro.props;
+
+const siteUrl = 'https://kremespedia.vercel.app';
+const siteName = 'Kremes_Pedia';
+const formattedCanonical = canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
+const formattedImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
+
+// Schema.org Organization
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteName,
+  url: siteUrl,
+  logo: `${siteUrl}/favicon.svg`,
+  description: 'Inovasi Kremesan Kaldu & Abon Halus Balita untuk Solusi Anti-GTM dan Booster Protein MPASI Bayi 8–24 Bulan.',
+  sameAs: [
+    'https://www.instagram.com/kremespedia',
+    'https://www.tiktok.com/@kremespedia',
+    'https://shopee.co.id/kremespedia',
+  ],
+};
+
+// Schema.org BreadcrumbList
+const breadcrumbSchema = breadcrumbs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((crumb, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: crumb.name,
+    item: crumb.url.startsWith('http') ? crumb.url : `${siteUrl}${crumb.url}`,
+  })),
+} : null;
+
+// Schema.org Article (ketika type === 'article')
+const articleSchema = type === 'article' ? {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  image: formattedImage,
+  datePublished: publishedDate || new Date().toISOString(),
+  dateModified: modifiedDate || publishedDate || new Date().toISOString(),
+  author: {
+    '@type': 'Person',
+    name: author,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: siteName,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteUrl}/favicon.svg`,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': formattedCanonical,
+  },
+  keywords: tags.join(', '),
+} : null;
+---
+
+<!-- Essential Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description.slice(0, 160)} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="canonical" href={formattedCanonical} />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<!-- Google Fonts Preconnect untuk Kecepatan Core Web Vitals -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:url" content={formattedCanonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description.slice(0, 160)} />
+<meta property="og:image" content={formattedImage} />
+<meta property="og:image:alt" content={title} />
+<meta property="og:locale" content="id_ID" />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={formattedCanonical} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description.slice(0, 160)} />
+<meta name="twitter:image" content={formattedImage} />
+<meta name="twitter:creator" content="@kremespedia" />
+
+<!-- Article Specific Tags -->
+{type === 'article' && publishedDate && (
+  <meta property="article:published_time" content={publishedDate} />
+)}
+{type === 'article' && modifiedDate && (
+  <meta property="article:modified_time" content={modifiedDate} />
+)}
+{type === 'article' && author && (
+  <meta property="article:author" content={author} />
+)}
+{tags.map((tag) => (
+  <meta property="article:tag" content={tag} />
+))}
+
+<!-- JSON-LD Structured Data Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+{breadcrumbSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}
+{articleSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+)}

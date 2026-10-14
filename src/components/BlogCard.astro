@@ -1,0 +1,92 @@
+---
+import type { BlogPost } from '../lib/notion';
+
+export interface Props {
+  post: BlogPost;
+  featured?: boolean;
+}
+
+const { post, featured = false } = Astro.props;
+---
+
+<article 
+  class={`group relative flex flex-col bg-surface-card dark:bg-surface-dark-card rounded-3xl overflow-hidden border border-brand-cream/80 dark:border-surface-dark-border shadow-soft hover:shadow-pastel transition-all duration-300 hover:-translate-y-1.5 ${
+    featured ? 'md:grid md:grid-cols-12 md:gap-6' : ''
+  }`}
+>
+  <!-- Card Image with Lazy Loading & SEO Alt -->
+  <div class={`relative overflow-hidden ${featured ? 'md:col-span-7 aspect-[16/10]' : 'aspect-[16/10]'}`}>
+    <img
+      src={post.coverImage}
+      alt={post.coverAlt || `${post.title} - Kremes_Pedia`}
+      loading="lazy"
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60"></div>
+    
+    <!-- Primary Tag Badge -->
+    {post.tags[0] && (
+      <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-brand-green/90 text-brand-cream backdrop-blur-md shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-peach"></span>
+        {post.tags[0]}
+      </span>
+    )}
+    
+    <!-- Reading Time Badge -->
+    <span class="absolute bottom-3 right-3 text-xs font-medium text-white/95 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full">
+      ⏱️ {post.readingTime}
+    </span>
+  </div>
+
+  <!-- Content Area -->
+  <div class={`p-6 sm:p-7 flex flex-col justify-between flex-1 ${featured ? 'md:col-span-5 md:py-8' : ''}`}>
+    <div>
+      <!-- Meta Information (Date & Tags) -->
+      <div class="flex items-center gap-2 text-xs font-medium text-[#7A8A7C] dark:text-[#8FA091] mb-3">
+        <time datetime={post.date}>{post.formattedDate}</time>
+        <span>•</span>
+        <span class="text-brand-green dark:text-brand-cream font-semibold">
+          {post.tags.slice(1, 2)[0] || 'MPASI Balita'}
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h3 class={`font-display font-bold text-[#1C3A18] dark:text-[#F3F6F2] group-hover:text-brand-green dark:group-hover:text-brand-cream transition-colors line-clamp-2 ${
+        featured ? 'text-2xl md:text-3xl mb-4 leading-snug' : 'text-xl mb-3 leading-snug'
+      }`}>
+        <a href={`/blog/${post.slug}`} class="focus:outline-none">
+          <span class="absolute inset-0" aria-hidden="true"></span>
+          {post.title}
+        </a>
+      </h3>
+
+      <!-- Excerpt -->
+      <p class="text-sm text-[#5F6D61] dark:text-[#A8BBAA] line-clamp-3 leading-relaxed mb-6">
+        {post.excerpt}
+      </p>
+    </div>
+
+    <!-- Author & Read Link -->
+    <div class="pt-4 border-t border-brand-cream/50 dark:border-surface-dark-border flex items-center justify-between mt-auto">
+      <div class="flex items-center gap-3">
+        <img
+          src={post.author.avatar}
+          alt={post.author.name}
+          loading="lazy"
+          class="w-9 h-9 rounded-full object-cover border-2 border-brand-peach/80"
+        />
+        <div class="flex flex-col">
+          <span class="text-xs font-bold text-[#2C352E] dark:text-[#E2EBE2]">{post.author.name}</span>
+          <span class="text-[11px] text-[#7A8A7C] dark:text-[#8FA091]">{post.author.role}</span>
+        </div>
+      </div>
+
+      <span class="inline-flex items-center gap-1 text-xs font-bold text-brand-green dark:text-brand-cream group-hover:translate-x-1 transition-transform">
+        <span>Baca</span>
+        <svg class="w-4 h-4 text-brand-peach" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </span>
+    </div>
+  </div>
+</article>

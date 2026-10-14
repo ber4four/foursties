@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bowlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8A598" />
+      <stop offset="100%" stop-color="#C97768" />
+    </linearGradient>
+    <linearGradient id="foodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE5B4" />
+      <stop offset="100%" stop-color="#F2D18B" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle soft organic -->
+  <circle cx="32" cy="32" r="30" fill="#FFF9F0" />
+  
+  <!-- Food Heap in bowl -->
+  <ellipse cx="32" cy="30" rx="19" ry="12" fill="url(#foodGrad)" />
+  
+  <!-- Crunchy sprinkles (kremesan) -->
+  <circle cx="26" cy="26" r="2" fill="#E8A598" />
+  <circle cx="33" cy="24" r="2.2" fill="#2D5A27" />
+  <circle cx="38" cy="27" r="1.8" fill="#E8A598" />
+  <circle cx="30" cy="30" r="1.7" fill="#C97768" />
+  <circle cx="24" cy="31" r="1.5" fill="#2D5A27" />
+  <circle cx="36" cy="31" r="2.1" fill="#2D5A27" />
+  <circle cx="41" cy="31" r="1.6" fill="#C97768" />
+  
+  <!-- Baby Bowl -->
+  <path d="M 12 30 C 12 46, 52 46, 52 30 Z" fill="url(#bowlGrad)" />
+  <ellipse cx="32" cy="30" rx="20" ry="4" fill="#FCEEEB" opacity="0.6" />
+  <!-- Bowl Base -->
+  <path d="M 24 45 Q 32 48 40 45" stroke="#C97768" stroke-width="3" stroke-linecap="round" fill="none" />
+  
+  <!-- Organic Leaf (Natural / Healthy) -->
+  <path d="M 33 13 C 33 13 40 12 43 18 C 43 23 37 23 33 21 C 32 17 33 13 33 13 Z" fill="#2D5A27" />
+  <path d="M 34 21 Q 38 17 41 15" stroke="#FFF9F0" stroke-width="1" stroke-linecap="round" />
+</svg>

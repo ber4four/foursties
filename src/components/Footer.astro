@@ -1,0 +1,141 @@
+---
+const currentYear = new Date().getFullYear();
+
+const blogCategories = [
+  { label: 'Solusi Anak Lalap Makan (Anti-GTM)', href: '/blog/solusi-anak-lahap-makan-anti-gtm' },
+  { label: 'Inovasi Tekstur & Sensori MPASI', href: '/blog/inovasi-tekstur-sensori-mpasi' },
+  { label: 'Trik Menambah Kalori & Protein Harian', href: '/blog/trik-menambah-kalori-protein-harian-tanpa-ribet' },
+];
+
+const productHighlights = [
+  { label: 'Kremesan Kaldu Ayam Kampung Balita', href: '/produk' },
+  { label: 'Abon Daging Sapi Halus MPASI (Iron Boost)', href: '/produk' },
+  { label: 'Paket Starter Anti-GTM Balita 8-24 Bulan', href: '/produk' },
+  { label: 'Resep Kreasi 5 Menit Ibu Bekerja', href: '/resep' },
+];
+---
+
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-brand-cream/80 dark:border-surface-dark-border transition-colors duration-300">
+  
+  <!-- Newsletter / Mom Community Callout -->
+  <div class="border-b border-brand-cream/60 dark:border-surface-dark-border bg-gradient-to-r from-brand-peach/10 via-brand-cream/20 to-brand-green/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-brand-green text-brand-cream mb-2">
+            ✨ Komunitas Ibu Cerdas Bebas GTM
+          </span>
+          <h3 class="text-xl sm:text-2xl font-display font-bold text-[#1C3A18] dark:text-[#FFF9F0]">
+            Dapatkan Resep MPASI Mingguan & Konsultasi Nutrisi Gratis
+          </h3>
+          <p class="text-sm text-[#5F6D61] dark:text-[#A8BBAA] mt-1">
+            Tips praktis langsung ke WhatsApp Anda khusus untuk ibu bekerja dengan balita 8–24 bulan.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <a
+            href="https://wa.me/6281234567890?text=Halo%20Kremes_Pedia,%20saya%20mau%20gabung%20komunitas%20resep%20MPASI%20bebas%20GTM"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-brand-green hover:bg-brand-green-light text-[#FFF9F0] text-sm font-bold shadow-green-glow transition-all"
+          >
+            <!-- WhatsApp Icon -->
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.813 2.796.814 3.183 0 5.769-2.588 5.77-5.768 0-3.18-2.587-5.766-5.77-5.768zm0 10.364c-.879 0-1.637-.234-2.316-.676l-.165-.107-1.724.452.46-1.68-.114-.182a4.606 4.606 0 01-.708-2.483c0-2.544 2.07-4.614 4.615-4.614 2.545 0 4.615 2.07 4.615 4.614 0 2.545-2.07 4.616-4.615 4.616zm2.528-3.468c-.139-.07-1.127-.557-1.302-.621-.175-.064-.303-.096-.431.096-.128.192-.496.621-.607.749-.111.128-.223.144-.362.074-.139-.07-.588-.217-1.12-.691-.414-.37-.693-.827-.774-.966-.08-.139-.009-.214.061-.283.063-.062.139-.16.208-.24.07-.08.093-.139.139-.232.046-.093.023-.175-.012-.245-.035-.07-.431-1.04-.59-1.424-.156-.374-.315-.323-.431-.329-.112-.006-.24-.007-.369-.007s-.337.049-.514.242c-.177.192-.676.661-.676 1.612 0 .951.692 1.87 1.788 1.998.096.012 1.86.347 3.327-.478.869-.489 1.144-1.385 1.196-1.55.053-.165.053-.306.012-.376-.041-.07-.156-.112-.295-.182z"></path>
+            </svg>
+            <span>Gabung WhatsApp Komunitas MPASI</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer Links Grid -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+      
+      <!-- Brand Bio (2 cols) -->
+      <div class="lg:col-span-2 space-y-4">
+        <a href="/" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-brand-peach to-brand-cream flex items-center justify-center shadow-pastel">
+            <svg class="w-5 h-5 text-brand-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 11h16a8 8 0 0 1-16 0Z"></path>
+              <path d="M12 3v4"></path>
+            </svg>
+          </div>
+          <span class="font-display font-extrabold text-2xl tracking-tight text-brand-green dark:text-brand-cream">
+            Kremes<span class="text-brand-peach">_Pedia</span>
+          </span>
+        </a>
+
+        <p class="text-sm text-[#5F6D61] dark:text-[#A8BBAA] leading-relaxed max-w-sm">
+          Platform edukasi nutrisi dan penyedia inovasi <strong>Kremesan & Abon Bayi Balita</strong> ramah sensori MPASI. Dirancang khusus membantu ibu bekerja menghadirkan makanan bergizi tinggi tanpa stres dan bebas drama GTM.
+        </p>
+
+        <div class="flex items-center gap-3 pt-2">
+          <span class="text-xs font-bold text-[#1C3A18] dark:text-[#E2EBE2]">Beli Resmi di:</span>
+          <a href="https://shopee.co.id" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-orange-100 text-orange-700 hover:bg-orange-200 transition-colors">Shopee Mall</a>
+          <a href="https://tokopedia.com" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-green-100 text-green-700 hover:bg-green-200 transition-colors">Tokopedia</a>
+        </div>
+      </div>
+
+      <!-- Topik Blog Wajib (1 col) -->
+      <div class="space-y-3">
+        <h4 class="font-display font-bold text-sm text-[#1C3A18] dark:text-[#FFF9F0] uppercase tracking-wider">
+          Topik Blog Edukasi
+        </h4>
+        <ul class="space-y-2 text-sm">
+          {blogCategories.map((cat) => (
+            <li>
+              <a href={cat.href} class="text-[#5F6D61] dark:text-[#A8BBAA] hover:text-brand-green dark:hover:text-brand-cream transition-colors">
+                {cat.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Produk & Solusi (1 col) -->
+      <div class="space-y-3">
+        <h4 class="font-display font-bold text-sm text-[#1C3A18] dark:text-[#FFF9F0] uppercase tracking-wider">
+          Produk Unggulan
+        </h4>
+        <ul class="space-y-2 text-sm">
+          {productHighlights.map((prod) => (
+            <li>
+              <a href={prod.href} class="text-[#5F6D61] dark:text-[#A8BBAA] hover:text-brand-green dark:hover:text-brand-cream transition-colors">
+                {prod.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Informasi & Hubungi (1 col) -->
+      <div class="space-y-3">
+        <h4 class="font-display font-bold text-sm text-[#1C3A18] dark:text-[#FFF9F0] uppercase tracking-wider">
+          Tentang & Legal
+        </h4>
+        <ul class="space-y-2 text-sm text-[#5F6D61] dark:text-[#A8BBAA]">
+          <li><a href="/about" class="hover:text-brand-green dark:hover:text-brand-cream transition-colors">Cerita & Visi Kami</a></li>
+          <li><a href="/about#sertifikasi" class="hover:text-brand-green dark:hover:text-brand-cream transition-colors">Sertifikasi Halal & BPOM</a></li>
+          <li><a href="/about#ahli-gizi" class="hover:text-brand-green dark:hover:text-brand-cream transition-colors">Dewan Ahli Gizi</a></li>
+          <li><span class="text-xs">Email: halo@kremespedia.id</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Disclaimer & Copyright -->
+    <div class="mt-12 pt-8 border-t border-brand-cream/60 dark:border-surface-dark-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#7A8A7C] dark:text-[#8FA091]">
+      <p>
+        © {currentYear} <strong>Kremes_Pedia</strong>. Hak Cipta Dilindungi Undang-Undang.
+      </p>
+      <p class="text-center md:text-right max-w-md">
+        Disclaimer: Informasi di website ini bertujuan sebagai edukasi gizi dan bukan pengganti saran medis dokter spesialis anak.
+      </p>
+    </div>
+
+  </div>
+</footer>
